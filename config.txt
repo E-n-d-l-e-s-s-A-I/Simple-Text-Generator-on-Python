@@ -1,0 +1,7 @@
+current_dictionary=lotr
+output_width=60
+start_interval=10000
+words_interval=50
+phrase_interval=1000
+max_generated_word_count=30
+generated_without_dot=20
