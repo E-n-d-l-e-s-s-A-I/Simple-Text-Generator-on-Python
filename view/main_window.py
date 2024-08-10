@@ -39,13 +39,13 @@ class MainWindow(tk.Tk):
     """
     _output_width = 60  # width of output window in characters
 
-    def __init__(self, output_width: int):
+    def __init__(self, output_width: int, image_name: str):
         super().__init__()
         self.geometry("1000x400")
         self.resizable(False, False)
         self.title("Text Generator")
         self._output_width = output_width
-
+        self._image_name = image_name
         MainWindow._set_styles()
         self._set_ui()
 
@@ -135,7 +135,7 @@ class MainWindow(tk.Tk):
 
     def _set_image_frame(self) -> None:
         """Set and fill image_frame."""
-        self.image_path = "gaindolf.png"
+        self.image_path = self._image_name
         self.image = Image.open(self.image_path)
         self.photo = ImageTk.PhotoImage(self.image)
 

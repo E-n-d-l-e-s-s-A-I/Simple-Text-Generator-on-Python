@@ -13,11 +13,9 @@ class Controller:
     _default_config = {
         "current_dictionary": "",
         "output_width": 60,
-        "start_interval": 50,
-        "words_interval": 50,
-        "phrase_interval": 1000,
         "max_generated_word_count": 30,
         "generated_without_dot": 10,
+        "image_name": "gaindolf.png"
     }   # contains the default settings
 
     def __init__(self):
@@ -27,7 +25,7 @@ class Controller:
         TextGenerator.set_max_generated_word_count(self._config["max_generated_word_count"])
 
         self.model = Model(self._config["current_dictionary"])
-        self.view = MainWindow(output_width=self._config["output_width"])
+        self.view = MainWindow(output_width=self._config["output_width"], image_name=self._config["image_name"])
         self._set_controllers()
 
         self.view.mainloop()
