@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from PIL import Image, ImageTk
 
 from model.file_handler import FileHandler
 
@@ -135,14 +134,12 @@ class MainWindow(tk.Tk):
 
     def _set_image_frame(self) -> None:
         """Set and fill image_frame."""
-        self.image_path = self._image_name
-        self.image = Image.open(self.image_path)
-        self.photo = ImageTk.PhotoImage(self.image)
+        self.image = tk.PhotoImage(file=self._image_name + ".png")
 
         self.image_frame = ttk.Frame(self, style="My.TFrame")
         self.image_frame.grid(row=0, column=1, rowspan=2, sticky="nsew")
 
-        self.image_label = ttk.Label(self.image_frame, image=self.photo, style="My.TLabel")
+        self.image_label = ttk.Label(self.image_frame, image=self.image, style="My.TLabel")
         self.image_label.pack(expand=True)
 
     @staticmethod
