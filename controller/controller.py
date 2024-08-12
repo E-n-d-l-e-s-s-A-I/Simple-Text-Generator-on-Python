@@ -57,9 +57,7 @@ class Controller:
         for key in set(Controller._default_config).difference(set(config)):
             config[key] = Controller._default_config[key]
 
-        for option in ("output_width", "start_interval",
-                       "words_interval", "phrase_interval",
-                       "max_generated_word_count", "generated_without_dot"):
+        for option in ("output_width", "max_generated_word_count", "generated_without_dot"):
             if not all([symbol.isdigit() for symbol in config[option]]):
                 config[option] = self._default_config[option]
             config[option] = int(config[option])

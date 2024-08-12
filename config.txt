@@ -2,4 +2,4 @@ current_dictionary=lotr
 output_width=60
 max_generated_word_count=30
 generated_without_dot=20
-image_name=gaindolf.png
+image_name=gaindolf
