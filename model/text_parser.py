@@ -4,7 +4,7 @@ import re
 class TextParser():
 
     DELIMITERS = r"[.!?;()]+"  # regular expression for delimiters between sentences
-    WORD = r"[a-zа-я']+[,:]?"  # regular expression for words
+    WORD = r"[a-zа-я'ё]+[,:]?"  # regular expression for words
 
     def _parse_sentences(self, text: str) -> list[str]:
         """
