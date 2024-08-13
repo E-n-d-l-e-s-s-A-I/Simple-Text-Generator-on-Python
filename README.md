@@ -220,7 +220,7 @@
 В приложении используется архитектура MVC (Model-View-Controller), обеспечивающая четкое разделение логики программы, пользовательского интерфейса и управления данными. Диаграмма классов, иллюстрирующая структуру и взаимодействие компонентов, представлена на следующем изображении.
 
 <div style="text-align: center;">
-  <img src="https://i.ibb.co/hK2ZC8z/Text-Generator-Class-Diagramm.png" alt="Description of the image" />
+  <img src="https://i.postimg.cc/fLxMbbWV/Text-Generator-Class-Diagramm.png)](https://postimg.cc/bDN7CptP" alt="Description of the image" />
 </div>
 
 ## Производительность
