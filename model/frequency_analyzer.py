@@ -22,7 +22,7 @@ class FrequencyAnalyzer:
 
         return {key:  dict(value) for key, value in count_dictionary.items()}
 
-    def _get_2_most_frequently_continuation(self, count_dictionary:  Dict[str, int]) -> List[str]:
+    def get_2_most_frequently_continuation(self, count_dictionary:  Dict[str, int]) -> List[str]:
         """Return two most frequent continuations by count dictionary."""
         iter_dict_keys = iter(count_dictionary.keys())
         if len(count_dictionary) == 0:
@@ -32,7 +32,7 @@ class FrequencyAnalyzer:
         else:
             first_elem_key = next(iter_dict_keys)
             second_elem_key = next(iter_dict_keys)
-            if FrequencyAnalyzer.compare_count_dict_items(first_elem_key, second_elem_key, count_dictionary):
+            if FrequencyAnalyzer._compare_count_dict_items(first_elem_key, second_elem_key, count_dictionary):
                 max1 = first_elem_key
                 max2 = second_elem_key
             else:
@@ -40,15 +40,15 @@ class FrequencyAnalyzer:
                 max1 = second_elem_key
 
             for end in iter_dict_keys:
-                if FrequencyAnalyzer.compare_count_dict_items(end, max1, count_dictionary):
+                if FrequencyAnalyzer._compare_count_dict_items(end, max1, count_dictionary):
                     max2 = max1
                     max1 = end
-                elif FrequencyAnalyzer.compare_count_dict_items(end, max2, count_dictionary):
+                elif FrequencyAnalyzer._compare_count_dict_items(end, max2, count_dictionary):
                     max2 = end
             return [max1, max2]
 
     @staticmethod
-    def compare_count_dict_items(key1, key2, dictionary) -> bool:
+    def _compare_count_dict_items(key1, key2, dictionary) -> bool:
         """Compare two continuations by key in count dictionary."""
         value1 = dictionary[key1]
         value2 = dictionary[key2]

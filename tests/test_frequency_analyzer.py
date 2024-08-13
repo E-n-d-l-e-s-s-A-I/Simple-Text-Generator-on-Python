@@ -66,26 +66,26 @@ class TestGet2MostFrequentlyContinued(unittest.TestCase):
 
     def test_works_with_empty_dict(self):
         dictionary = {}
-        actual = self.frequency_analyzer._get_2_most_frequently_continuation(dictionary)
+        actual = self.frequency_analyzer.get_2_most_frequently_continuation(dictionary)
         excepted = None
         self.assertEqual(actual, excepted)
 
     def test_works_with_another_type_dict(self):
         dictionary = 1
         with self.assertRaises(TypeError):
-            self.frequency_analyzer._get_2_most_frequently_continuation("a", dictionary)
+            self.frequency_analyzer.get_2_most_frequently_continuation("a", dictionary)
 
         dictionary = 1.1
         with self.assertRaises(TypeError):
-            self.frequency_analyzer._get_2_most_frequently_continuation("a", dictionary)
+            self.frequency_analyzer.get_2_most_frequently_continuation("a", dictionary)
 
         dictionary = True
         with self.assertRaises(TypeError):
-            self.frequency_analyzer._get_2_most_frequently_continuation("a", dictionary)
+            self.frequency_analyzer.get_2_most_frequently_continuation("a", dictionary)
 
     def test_works_with_one_element_dict(self):
         dictionary = {"a": 1}
-        actual = self.frequency_analyzer._get_2_most_frequently_continuation(dictionary)
+        actual = self.frequency_analyzer.get_2_most_frequently_continuation(dictionary)
         excepted = ["a"]
         self.assertEqual(actual, excepted)
 
@@ -96,7 +96,7 @@ class TestGet2MostFrequentlyContinued(unittest.TestCase):
                     "d": 4,
                     "c": 3,
                     }
-        actual = self.frequency_analyzer._get_2_most_frequently_continuation(dictionary)
+        actual = self.frequency_analyzer.get_2_most_frequently_continuation(dictionary)
         excepted = ["d", "c"]
         self.assertEqual(actual, excepted)
 
@@ -145,6 +145,8 @@ class TestGet2MostFrequentlyContinued(unittest.TestCase):
             },
         ]
         for dictionary in dictionarys:
-            actual = self.frequency_analyzer._get_2_most_frequently_continuation(dictionary)
+            actual = self.frequency_analyzer.get_2_most_frequently_continuation(
+                dictionary
+            )
             excepted = ["d", "i"]
             self.assertEqual(actual, excepted)

@@ -17,9 +17,10 @@ class Ngram():
         self._text = text
         self._count_dict = count_dict
         self._most_frequently_continuations_list = (
-            most_frequently_continuations_list if most_frequently_continuations_list else
-            self._frequency_analyzer._get_2_most_frequently_continuation(count_dict)
-            )
+            most_frequently_continuations_list
+            if most_frequently_continuations_list
+            else self._frequency_analyzer.get_2_most_frequently_continuation(count_dict)
+        )
 
     def update_dicts(self, input_count_dict) -> None:
         """
@@ -35,9 +36,11 @@ class Ngram():
 
     def _update_most_frequently_continued_list(self):
         """Update the the most frequent continuations by current count_dict."""
-        self._most_frequently_continuations_list = self._frequency_analyzer._get_2_most_frequently_continuation(
-            self._count_dict
+        self._most_frequently_continuations_list = (
+            self._frequency_analyzer.get_2_most_frequently_continuation(
+                self._count_dict
             )
+        )
 
     def get_next_word_dot_is_possible(self) -> str:
         """Return random one from the list of the most frequent continuations, but if possible a dot."""

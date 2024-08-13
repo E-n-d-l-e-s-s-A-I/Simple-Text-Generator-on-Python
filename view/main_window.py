@@ -49,7 +49,7 @@ class MainWindow(tk.Tk):
         self._set_ui()
 
     @property
-    def mode(self) -> str:
+    def input_mode(self) -> str:
         """Get current input mode."""
         return self._input_mode.get()
 
