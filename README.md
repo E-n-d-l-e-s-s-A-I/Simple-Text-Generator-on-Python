@@ -55,12 +55,10 @@
 4. **Настройка параметров**: Измените файл `config.txt`, чтобы настроить параметры `max_generated_word_count` и `generated_without_dot` в соответствии с вашими потребностями.
 
    ### Интерфейс приложения
-  <div align="center">
-    <div style="margin-top: 40px; width: 85%;">
-      <img src="./images/interface.jpg" alt="generate chart" />
-    </div>
+  <div style="text-align: center; margin-top: 40px;">
+    <img src="./images/interface.jpg" alt="generate chart" />
   </div>
-  
+
 ## Алгоритм генерации
 
 1. ### Понятие n-граммы
@@ -270,33 +268,31 @@
    #### Графики времени выполнения
 
    На графиках ниже приведена зависимость времени выполнения от размера входных данных. По оси ординат — размер входных данных в символах, по оси абсцисс — время выполнения в секундах.
-<div align="center">
 
-  <div style=" margin-top: 40px; width:70%;">
+  <div style="text-align: center; margin-top: 40px;">
     <img src="./images/read_and_update.png" alt="read_and_update chart" />
   </div>
 
 
 
-  <div style="margin-top: 40px; width:70%;">
+  <div style="text-align: center; margin-top: 40px;">
     <img src="./images/open_model.png" alt="open_model chart" />
   </div>
 
 
  
-  <div style="margin-top: 40px; width:70%;">
+  <div style="text-align: center; margin-top: 40px;">
     <img src="./images/create_new.png" alt="create_new chart" />
   </div>
 
 
 
-  <div style="margin-top: 40px; width:70%;">
+  <div style="text-align: center; margin-top: 40px;">
     <img src="./images/delete.png" alt="delete chart" />
   </div>
 
 
 
-  <div style="margin-top: 40px; width:70%;">
+  <div style="text-align: center; margin-top: 40px;">
     <img src="./images/generate.png" alt="generate chart" />
   </div>
-</div>
