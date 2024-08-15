@@ -55,7 +55,7 @@
 4. **Настройка параметров**: Измените файл `config.txt`, чтобы настроить параметры `max_generated_word_count` и `generated_without_dot` в соответствии с вашими потребностями.
 
    ### Интерфейс приложения
-  <div style="text-align: center; margin-top: 40px;">
+  <div align="center">
     <img src="./images/interface.jpg" alt="generate chart" />
   </div>
 
@@ -221,7 +221,7 @@
 ## Архитектура приложения
 В приложении используется архитектура MVC (Model-View-Controller), обеспечивающая четкое разделение логики программы, пользовательского интерфейса и управления данными. Диаграмма классов, иллюстрирующая структуру и взаимодействие компонентов, представлена на следующем изображении.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="./images/TextGeneratorClassDiagramm.png" alt="Class diagram" />
 </div>
 
@@ -269,30 +269,30 @@
 
    На графиках ниже приведена зависимость времени выполнения от размера входных данных. По оси ординат — размер входных данных в символах, по оси абсцисс — время выполнения в секундах.
 
-  <div style="text-align: center; margin-top: 40px;">
+  <div align="center">
     <img src="./images/read_and_update.png" alt="read_and_update chart" />
   </div>
 
 
 
-  <div style="text-align: center; margin-top: 40px;">
+  <div align="center">
     <img src="./images/open_model.png" alt="open_model chart" />
   </div>
 
 
  
-  <div style="text-align: center; margin-top: 40px;">
+  <div align="center">
     <img src="./images/create_new.png" alt="create_new chart" />
   </div>
 
 
 
-  <div style="text-align: center; margin-top: 40px;">
+  <div align="center">
     <img src="./images/delete.png" alt="delete chart" />
   </div>
 
 
 
-  <div style="text-align: center; margin-top: 40px;">
+  <div align="center">
     <img src="./images/generate.png" alt="generate chart" />
   </div>
