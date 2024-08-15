@@ -134,7 +134,7 @@ class MainWindow(tk.Tk):
 
     def _set_image_frame(self) -> None:
         """Set and fill image_frame."""
-        self.image = tk.PhotoImage(file=self._image_name + ".png")
+        self.image = tk.PhotoImage(file="images/" + self._image_name + ".png")
 
         self.image_frame = ttk.Frame(self, style="My.TFrame")
         self.image_frame.grid(row=0, column=1, rowspan=2, sticky="nsew")
