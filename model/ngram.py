@@ -27,11 +27,7 @@ class Ngram():
         Adds the values of the input count dictionary to the values of current count dictionary
         then finds the new most frequent continuations.
         """
-        for next_word in input_count_dict:
-            if next_word not in self._count_dict:
-                self._count_dict[next_word] = input_count_dict[next_word]
-            else:
-                self._count_dict[next_word] += input_count_dict[next_word]
+        self._count_dict += input_count_dict
         self._update_most_frequently_continued_list()
 
     def _update_most_frequently_continued_list(self):

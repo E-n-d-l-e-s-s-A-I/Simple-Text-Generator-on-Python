@@ -1,28 +1,28 @@
-from collections import defaultdict
+from collections import defaultdict, Counter
 from typing import Dict, List
 
 
 class FrequencyAnalyzer:
     """Class describing methods of frequency analysis."""
 
-    def create_count_dict(self, text_list: List[List[str]]) -> Dict[str, Dict[str, int]]:
+    def create_count_dict(self, text_list: List[List[str]]) -> Dict[str, Counter]:
         """Create a count dictionary by parsed text."""
-        count_dictionary = defaultdict(lambda: defaultdict(int))
+        count_dictionary = defaultdict(Counter)
         for sentence_list in text_list:
             for i in range(len(sentence_list)-1):
                 # обработка биграмм
                 bigram_start = sentence_list[i]
                 bigram_end = sentence_list[i+1]
-                count_dictionary[bigram_start][bigram_end] += 1
+                count_dictionary[bigram_start].update([bigram_end])
                 # обработка триграмм
                 if i < len(sentence_list)-2:
                     trigram_start = ' '.join(sentence_list[i:i+2])
                     trigram_end = sentence_list[i+2]
-                    count_dictionary[trigram_start][trigram_end] += 1
+                    count_dictionary[trigram_start].update([trigram_end])
 
-        return {key:  dict(value) for key, value in count_dictionary.items()}
+        return count_dictionary
 
-    def get_2_most_frequently_continuation(self, count_dictionary:  Dict[str, int]) -> List[str]:
+    def get_2_most_frequently_continuation(self, count_dictionary:  Counter) -> List[str]:
         """Return two most frequent continuations by count dictionary."""
         iter_dict_keys = iter(count_dictionary.keys())
         if len(count_dictionary) == 0:

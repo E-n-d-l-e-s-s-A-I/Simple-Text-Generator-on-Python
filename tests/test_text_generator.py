@@ -1,5 +1,6 @@
 """Module tests methods from TextGenerator and Ngram classes."""
 
+from typing import Counter
 import unittest
 
 from model.ngram import Ngram
@@ -204,13 +205,8 @@ class TestUpdateDicts(unittest.TestCase):
         self.assertEqual(self.text_generaotor._ngrams_dict, expected_ngrams)
 
     def test_add_count_dict(self):
-        start_count_dict = {
-            "a":
-                {
-                    "b": 1,
-                    "c": 3,
-                },
-        }
+        start_count_dict = {"a": Counter(["b", "c", "c", "c"])}
+
         start_ngram = {"a": Ngram(text="a", count_dict=start_count_dict["a"])}
         input_count_dict = {
             "a":

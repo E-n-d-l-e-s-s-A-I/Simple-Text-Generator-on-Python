@@ -8,8 +8,8 @@ from model.text_parser import TextParser
 class TextGenerator():
     """Class describing TextGenerator."""
 
-    _max_generated_word_count = 0  # maximum number of words generated
-    _generated_without_dot = 0  # number of generated words after which Generator tries to complete the sentence
+    _max_generated_word_count = 10  # maximum number of words generated
+    _generated_without_dot = 10  # number of generated words after which Generator tries to complete the sentence
 
     def __init__(self, ngrams: Dict[str, Ngram] = None):
         self._text_parser = TextParser()
